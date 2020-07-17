@@ -180,34 +180,6 @@ resource "aws_security_group_rule" "sg1-2" {
 
 # aws_security_group_rule.sg2:
 resource "aws_security_group_rule" "sg2" {
-    cidr_blocks              = []
-    from_port                = 1
-    ipv6_cidr_blocks         = []
-    prefix_list_ids          = []
-    protocol                 = "tcp"
-    security_group_id        = "sg-079dc92b7ce7b7c9c"
-    self                     = false
-    to_port                  = 65535
-    type                     = "ingress"
-}
-
-# aws_security_group_rule.sg2-1:
-resource "aws_security_group_rule" "sg2-1" {
-    cidr_blocks       = [
-        "0.0.0.0/0",
-    ]
-    from_port         = 3000
-    ipv6_cidr_blocks  = []
-    prefix_list_ids   = []
-    protocol          = "tcp"
-    security_group_id = "sg-079dc92b7ce7b7c9c"
-    self              = false
-    to_port           = 3000
-    type              = "ingress"
-}
-
-# aws_security_group_rule.sg2-2:
-resource "aws_security_group_rule" "sg2-2" {
     cidr_blocks       = [
         "0.0.0.0/0",
     ]
@@ -219,4 +191,19 @@ resource "aws_security_group_rule" "sg2-2" {
     self              = false
     to_port           = 0
     type              = "egress"
+}
+
+# aws_security_group_rule.sg2-2:
+resource "aws_security_group_rule" "sg2-2" {
+    cidr_blocks       = [
+        "0.0.0.0/0",
+    ]
+    from_port         = 3000
+    ipv6_cidr_blocks  = []
+    prefix_list_ids   = []
+    protocol          = "tcp"
+    security_group_id = "sg-079dc92b7ce7b7c9c"
+    self              = false
+    to_port           = 3000
+    type              = "ingress"
 }
